@@ -22,4 +22,7 @@ dependencies = [
     "numpy",
     "einops",
     "kornia",
+    "matplotlib",
+    "pandas",
+    "Pillow",
 ]

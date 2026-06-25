@@ -265,10 +265,10 @@ class MobileOneCoarse(nn.Module):
         self.model = mobileone(variant=variant, **kwargs)
 
         # Decoder
-        self.d4 = nn.ConvTranspose2d(2048, 1792, kernel_size=4, stride=2, padding=1)
-        self.d3 = nn.ConvTranspose2d(1792 + 1792, 896, kernel_size=4, stride=2, padding=1)
-        self.d2 = nn.ConvTranspose2d(896 + 896, 384, kernel_size=4, stride=2, padding=1)
-        self.d1 = nn.ConvTranspose2d(384 + 384, 64, kernel_size=4, stride=2, padding=1)
+        self.d4 = nn.ConvTranspose2d(2048, 896, kernel_size=4, stride=2, padding=1)
+        self.d3 = nn.ConvTranspose2d(896 + 896, 448, kernel_size=4, stride=2, padding=1)
+        self.d2 = nn.ConvTranspose2d(448 + 448, 192, kernel_size=4, stride=2, padding=1)
+        self.d1 = nn.ConvTranspose2d(192 + 192, 64, kernel_size=4, stride=2, padding=1)
         self.d0 = nn.ConvTranspose2d(64 + 64, 3, kernel_size=4, stride=2, padding=1)
         self.relu = nn.ReLU(inplace=True)
         self.sigmoid = nn.Sigmoid()
@@ -374,7 +374,7 @@ if __name__ == '__main__':
                 'use_qpos': None,
                 'use_kpos': None,
                 'dropout': 0.1,
-                'feature_i': 2,
+                'feature_i': 3,
                 'concat_features': True,
                 'final_conv': True,
                 'feature_dim': 896,

@@ -3,3 +3,21 @@ _site
 .jekyll-cache
 .jekyll-metadata
 .DS_Store
+
+# Data
+data/
+test_masks/
+test_masks.zip
+archive.zip
+
+# Training outputs
+checkpoints/
+debug_images/
+runs/
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
